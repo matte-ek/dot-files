@@ -164,10 +164,14 @@ bindsym $mod+r mode "resize"
 
 # Application start keybinds
 bindsym $mod+Return exec kitty
-bindsym $mod+D exec --no-startup-id bash ~/.config/rofi/launchers/colorful/launcher.sh
-bindsym $mod+Shift+X exec --no-startup-id bash ~/.config/rofi/powermenu/powermenu.sh
-bindsym $mod+Shift+Return exec firefox
+bindsym $mod+D exec --no-startup-id bash ~/.config/rofi/launchers/type-1/launcher.sh
+bindsym $mod+Shift+X exec --no-startup-id bash ~/.config/rofi/powermenu/type-1/powermenu.sh
+bindsym $mod+Shift+Return exec google-chrome-stable
 bindsym $mod+Ctrl+Return exec Thunar
+
+# Screenshotting keybinds
+bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 
 # Set gaps size
 gaps inner 25
@@ -180,34 +184,48 @@ for_window [class="floating_window"] floating enable
 # Disable the title of windows
 for_window [class="^.*"] border pixel 1
 
-# Run some stuff
-exec --no-startup-id /usr/bin/easyeffects --gapplication-service
-exec --no-startup-id xinput --set-prop 13 'libinput Accel Speed' -0.7
-exec --no-startup-id dunst
-
-# Setup wallpaper
-exec --no-startup-id nitrogen --restore
-
 # Setup workspace on my second monitor, doubt this is the ideal
 # solution, lol.
-workspace $ws1 output DVI-D-0
-workspace $ws9 output HDMI-1
+workspace $ws1 output DP-4
+workspace $ws9 output HDMI-0
 
-# Run the compositor, with --experimental-backends for the blur to work correctly.
-exec --no-startup-id picom -b --experimental-backends
+# Equalizer
+exec --no-startup-id /usr/bin/easyeffects --gapplication-service
 
-# Run polybar
+# Mouse sensitivity
+exec --no-startup-id xinput --set-prop 13 'libinput Accel Speed' -0.7
+
+# Notification daemon
+exec --no-startup-id dunst
+
+# Wallpaper
+exec --no-startup-id nitrogen --restore
+
+# Compositor
+exec --no-startup-id picom -b
+
+# Bar
 exec --no-startup-id bash ~/.config/polybar/launch.sh
 
-# Screenshotting keybinds
-bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+exec --no-startup-id nvidia-settings --load-config-only
+exec --no-startup-id xmousepasteblock
 
-# Personal toggle stuff
-bindsym Pause exec --no-startup-id bash ~/Scripts/toggle_mic.sh
-bindsym Shift+Pause exec --no-startup-id bash ~/Scripts/toggle_picom.sh
 
-# Set some colors
-client.focused #45a5ed #45a5ed #ffffff #45a5ed #45a5ed
-client.focused_inactive #45a5ed #45a5ed #ffffff #45a5ed #45a5ed
-client.unfocused #45a5ed #45a5ed #ffffff #45a5ed #45a5ed
+# Colors
+client.focused #e3405b #e3405b #ffffff #e3405b #e3405b
+client.focused_inactive #e3405b #e3405b #ffffff #e3405b #e3405b
+client.unfocused #e3405b #e3405b #ffffff #e3405b #e3405b
+
+# "CUSTOM" STUFF BELOW:
+
+for_window [title="Pine Engine"] floating enable
+
+# Auto start
+exec --no-startup-id discord
+exec --no-startup-id spotify
+exec --no-startup-id steam
+
+# Set personal work spaces
+for_window [class="discord"] move to workspace $ws5
+for_window [class="Spotify"] move to workspace $ws6
+for_window [class="Steam"] move to workspace $ws7
