@@ -34,7 +34,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # change focus
 bindsym $mod+j focus left
@@ -70,9 +70,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -165,13 +165,17 @@ bindsym $mod+r mode "resize"
 # Application start keybinds
 bindsym $mod+Return exec kitty
 bindsym $mod+D exec --no-startup-id bash ~/.config/rofi/launchers/type-1/launcher.sh
-bindsym $mod+Shift+X exec --no-startup-id bash ~/.config/rofi/powermenu/type-1/powermenu.sh
-bindsym $mod+Shift+Return exec google-chrome-stable
-bindsym $mod+Ctrl+Return exec Thunar
+bindsym $mod+Shift+X exec --no-startup-id bash ~/.config/rofi/powermenu/type-3/powermenu.sh
+bindsym $mod+W exec --no-startup-id google-chrome-stable
+bindsym $mod+E exec --no-startup-id nautilus
 
 # Screenshotting keybinds
 bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Scroll_Lock exec --no-startup-id bash ~/.scripts/toggleam.sh
+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 # Set gaps size
 gaps inner 25
@@ -186,14 +190,15 @@ for_window [class="^.*"] border pixel 1
 
 # Setup workspace on my second monitor, doubt this is the ideal
 # solution, lol.
-workspace $ws1 output DP-4
-workspace $ws9 output HDMI-0
+#workspace $ws1 output DP-4
+#workspace $ws9 output HDMI-0
 
 # Equalizer
-exec --no-startup-id /usr/bin/easyeffects --gapplication-service
+#exec --no-startup-id /usr/bin/easyeffects --gapplication-service
 
 # Mouse sensitivity
-exec --no-startup-id xinput --set-prop 13 'libinput Accel Speed' -0.7
+#exec --no-startup-id xinput --set-prop 13 'libinput Accel Speed' -0.7
+exec --no-startup-id xinput --set-prop 11 'libinput Scrolling Pixel Distance' 40
 
 # Notification daemon
 exec --no-startup-id dunst
@@ -207,25 +212,25 @@ exec --no-startup-id picom -b
 # Bar
 exec --no-startup-id bash ~/.config/polybar/launch.sh
 
-exec --no-startup-id nvidia-settings --load-config-only
-exec --no-startup-id xmousepasteblock
-
+# Touch gestures
+exec --no-startup-id touchegg
 
 # Colors
-client.focused #e3405b #e3405b #ffffff #e3405b #e3405b
-client.focused_inactive #e3405b #e3405b #ffffff #e3405b #e3405b
-client.unfocused #e3405b #e3405b #ffffff #e3405b #e3405b
+client.focused #45a5ed #45a5ed #ffffff #45a5ed #45a5ed
+client.focused_inactive #45a5ed #45a5ed #ffffff #45a5ed #45a5ed
+client.unfocused #45a5ed #45a5ed #ffffff #45a5ed #45a5ed
 
 # "CUSTOM" STUFF BELOW:
-
 for_window [title="Pine Engine"] floating enable
+for_window [class="org.gnome.Nautilus"] floating enable
+for_window [class="Eog"] floating enable
+for_window [class="gnome-calculator"] floating enable
+for_window [class="Gnome-system-monitor"] floating enable
 
 # Auto start
-exec --no-startup-id discord
-exec --no-startup-id spotify
-exec --no-startup-id steam
+#exec --no-startup-id discord
+#exec --no-startup-id spotify-launcher
 
 # Set personal work spaces
 for_window [class="discord"] move to workspace $ws5
 for_window [class="Spotify"] move to workspace $ws6
-for_window [class="Steam"] move to workspace $ws7
