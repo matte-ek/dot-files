@@ -11,7 +11,7 @@ if [ $1 == "push" ]; then
 fi
 
 # Pull from current ~/.config
-if [ $1 == "pop" ]; then
+if [ $1 == "pull" ]; then
    cp -r ~/.config/rofi .
    cp -r ~/.config/kitty .
    cp -r ~/.config/i3 .
