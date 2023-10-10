@@ -173,15 +173,16 @@ bindsym XF86Launch9 exec --no-startup-id ~/.m/m-cli --toggle
 
 # Screenshotting keybinds
 bindsym $mod+Shift+S exec --no-startup-id flameshot gui
-bindsym Scroll_Lock exec --no-startup-id bash ~/.scripts/toggleam.sh
 
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
+bindsym $mod+P exec --no-startup-id systemctl --user restart easyeffects
+
 # Set gaps size
-gaps inner 25
+gaps inner 20
 gaps outer 0
-gaps top 55
+gaps top 60
 
 # Provide window class to float above tiled windows
 floating_maximum_size -1 x -1
@@ -194,9 +195,6 @@ for_window [class="^.*"] border pixel 0
 # solution, lol.
 #workspace $ws1 output DP-4
 #workspace $ws9 output HDMI-0
-
-# Equalizer
-exec --no-startup-id /usr/bin/easyeffects --gapplication-service
 
 # Mouse sensitivity
 exec --no-startup-id xinput --set-prop 14 'libinput Accel Speed' -0.7
@@ -233,7 +231,7 @@ for_window [class="Gnome-system-monitor"] floating enable
 
 # Auto start
 exec --no-startup-id discord --enable-blink-features=MiddleClickAutoscroll
-exec --no-startup-id steam
+#exec --no-startup-id steam
 exec --no-startup-id spotify-launcher
 
 # Set personal work spaces
