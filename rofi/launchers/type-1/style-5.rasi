@@ -65,7 +65,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      1px solid;
-    border-radius:               0px;
+    border-radius:               15px;
     border-color:                @border-colour;
     cursor:                      "default";
     /* Backgroud Colors */
@@ -113,7 +113,7 @@ prompt {
     text-color:                  inherit;
 }
 textbox-prompt-colon {
-    enabled:                     true;
+    enabled:                     false;
     padding:                     5px 0px;
     expand:                      false;
     str:                         "";
@@ -123,10 +123,11 @@ textbox-prompt-colon {
 entry {
     enabled:                     true;
     padding:                     5px 0px;
-    background-color:            inherit;
+    background-color:            #77777700;
+    border-radius:               0px;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "Search...";
+    placeholder:                 " Search...";
     placeholder-color:           inherit;
 }
 num-filtered-rows {
@@ -161,7 +162,7 @@ listview {
     lines:                       8;
     cycle:                       true;
     dynamic:                     true;
-    scrollbar:                   true;
+    scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
     fixed-height:                true;
