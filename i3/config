@@ -25,10 +25,11 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioNext exec --no-startup-id playerctl next
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -36,23 +37,11 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+q kill
 
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+odiaeresis focus right
-
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+odiaeresis move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -168,6 +157,7 @@ bindsym $mod+D exec --no-startup-id bash ~/.config/rofi/launchers/type-1/launche
 bindsym $mod+Shift+X exec --no-startup-id bash ~/.config/rofi/powermenu/type-3/powermenu.sh
 bindsym $mod+W exec --no-startup-id google-chrome-stable
 bindsym $mod+E exec --no-startup-id thunar
+bindsym $mod+K exec --no-startup-id (cd ~/.m && ~/.m/m-pv)
 
 bindsym XF86Launch9 exec --no-startup-id ~/.m/m-cli --toggle
 
@@ -178,6 +168,9 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 bindsym $mod+P exec --no-startup-id systemctl --user restart easyeffects
+bindsym $mod+L exec --no-startup-id pavucontrol
+
+bindsym Pause exec --no-startup-id bash ~/.scripts/toggle_mute.sh
 
 # Set gaps size
 gaps inner 20
@@ -197,7 +190,7 @@ for_window [class="^.*"] border pixel 0
 #workspace $ws9 output HDMI-0
 
 # Mouse sensitivity
-exec --no-startup-id xinput --set-prop 14 'libinput Accel Speed' -0.7
+exec --no-startup-id xinput --set-prop "pointer:Razer Razer DeathAdder V2" 'libinput Accel Speed' -0.7
 #exec --no-startup-id xinput --set-prop 11 'libinput Scrolling Pixel Distance' 40
 
 # Notification daemon
@@ -228,13 +221,14 @@ for_window [class="org.gnome.Nautilus"] floating enable
 for_window [class="Eog"] floating enable
 for_window [class="gnome-calculator"] floating enable
 for_window [class="Gnome-system-monitor"] floating enable
+for_window [class="Pavucontrol"] floating enable
 
 # Auto start
-exec --no-startup-id discord --enable-blink-features=MiddleClickAutoscroll
+exec --no-startup-id (sleep 10 && vencord-desktop --enable-blink-features=MiddleClickAutoscroll)
 #exec --no-startup-id steam
-exec --no-startup-id spotify-launcher
+exec --no-startup-id (sleep 10 && spotify-launcher)
 
 # Set personal work spaces
-for_window [class="discord"] move to workspace $ws5
+for_window [class="VencordDesktop"] move to workspace $ws5
 for_window [class="Spotify"] move to workspace $ws6
 for_window [class="steam"] move to workspace $ws7
