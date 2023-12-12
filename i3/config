@@ -156,7 +156,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+D exec --no-startup-id bash ~/.config/rofi/launchers/type-1/launcher.sh
 bindsym $mod+Shift+X exec --no-startup-id bash ~/.config/rofi/powermenu/type-3/powermenu.sh
 bindsym $mod+W exec --no-startup-id google-chrome-stable
-bindsym $mod+E exec --no-startup-id thunar
+bindsym $mod+E exec --no-startup-id nemo
 bindsym $mod+K exec --no-startup-id (cd ~/.m && ~/.m/m-pv)
 
 bindsym XF86Launch9 exec --no-startup-id ~/.m/m-cli --toggle
@@ -175,7 +175,7 @@ bindsym Pause exec --no-startup-id bash ~/.scripts/toggle_mute.sh
 # Set gaps size
 gaps inner 20
 gaps outer 0
-gaps top 60
+gaps top 70
 
 # Provide window class to float above tiled windows
 floating_maximum_size -1 x -1
@@ -184,10 +184,9 @@ for_window [class="floating_window"] floating enable
 # Disable the title of windows
 for_window [class="^.*"] border pixel 0
 
-# Setup workspace on my second monitor, doubt this is the ideal
-# solution, lol.
-#workspace $ws1 output DP-4
-#workspace $ws9 output HDMI-0
+workspace $ws1 output DP-4
+workspace $ws9 output DP-2
+workspace $ws9 gaps top 0
 
 # Mouse sensitivity
 exec --no-startup-id xinput --set-prop 'pointer:Razer Razer DeathAdder V2' 'libinput Accel Speed' -0.7
@@ -222,6 +221,7 @@ for_window [class="Eog"] floating enable
 for_window [class="gnome-calculator"] floating enable
 for_window [class="Gnome-system-monitor"] floating enable
 for_window [class="Pavucontrol"] floating enable
+for_window [class="Nemo"] floating enable
 
 # Auto start
 exec --no-startup-id (sleep 10 && discord --enable-blink-features=MiddleClickAutoscroll)
