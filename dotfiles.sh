@@ -8,6 +8,8 @@ if [ $1 == "push" ]; then
     cp -r polybar ~/.config/
     cp -r dunst ~/.config/
     cp -r picom ~/.config/
+    cp .vimrc ~/
+    cp .zshrc ~/
 fi
 
 # Pull from current ~/.config
@@ -18,4 +20,6 @@ if [ $1 == "pull" ]; then
    cp -r ~/.config/polybar .
    cp -r ~/.config/dunst .
    cp -r ~/.config/picom .
+   cp ~/.vimrc .
+   cp ~/.zshrc .
 fi
