@@ -10,6 +10,7 @@ if [ $1 == "push" ]; then
     cp -r picom ~/.config/
     cp .vimrc ~/
     cp .zshrc ~/
+    cp -r .vim ~/
 fi
 
 # Pull from current ~/.config
@@ -22,4 +23,5 @@ if [ $1 == "pull" ]; then
    cp -r ~/.config/picom .
    cp ~/.vimrc .
    cp ~/.zshrc .
+   cp -r ~/.vim .
 fi
