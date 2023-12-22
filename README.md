@@ -1,7 +1,7 @@
-Thank you for checking out my dot files! I would like to thank adi1090x for his [polybar themes](https://github.com/adi1090x/polybar-themes) which mine is based upon (The material one to be specific), therefore if you have any issues with missing fonts, please check out his repository and make sure to install the included fonts. Also thanks PrayagS for your nice [polybar spotify script](https://github.com/PrayagS/polybar-spotify).
+# Dot Files
 
-VS Code Theme in the screenshot is [Ayu Dark Bordered](https://marketplace.visualstudio.com/items?itemName=teabyii.ayu)
+My (mostly) up to date dot-files, currently on 1440p monitor so might look a bit large/wrong on a 1080p screen.
 
-## Preview
-![Alt text](preview.png?raw=true "Preview")
-
+Preview:
+![2023-12-22_03-22](https://github.com/matte-ek/dot-files/assets/49276951/47b5c5d7-d85f-47d8-bef5-a1f86d1181f5)
+![2023-12-22_03-23](https://github.com/matte-ek/dot-files/assets/49276951/5d4a933d-ffad-47f2-818b-b91ef847e231)
