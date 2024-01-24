@@ -241,6 +241,7 @@ for_window [class="Eog"] floating enable
 for_window [class="gnome-calculator"] floating enable
 for_window [class="Gnome-system-monitor"] floating enable
 for_window [class="Pavucontrol"] floating enable
+for_window [class="qalc"] floating enable
 #for_window [class="Nemo"] floating enable
 
 # Auto start
