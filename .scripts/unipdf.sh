@@ -2,5 +2,4 @@ cd /home/matte/uni
 
 pdf="$(find . -name *.pdf | fzf)"
 
-zathura "$pdf" &
-kill $PPID
+nohup zathura "$pdf" &
