@@ -8,6 +8,7 @@ if [ $1 == "push" ]; then
     cp -r polybar ~/.config/
     cp -r dunst ~/.config/
     cp -r picom ~/.config/
+    cp -r .scripts ~/
     cp .vimrc ~/
     cp .zshrc ~/
     cp -r .vim ~/
@@ -24,4 +25,5 @@ if [ $1 == "pull" ]; then
    cp ~/.vimrc .
    cp ~/.zshrc .
    cp -r ~/.vim .
+   cp -r ~/.scripts .
 fi
