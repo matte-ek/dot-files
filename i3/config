@@ -171,6 +171,7 @@ bindsym $mod+W exec --no-startup-id firefox
 bindsym $mod+E exec --no-startup-id nemo
 bindsym $mod+K exec --no-startup-id (cd ~/.m && ~/.m/m-pv)
 bindsym $mod+L exec --no-startup-id pavucontrol
+bindsym $mod+C exec --no-startup-id /home/matte/src/kitty/kitty/launcher/kitty --class qalc qalc
 bindsym $mod+M exec --no-startup-id ~/.m/m-cli --toggle
 
 # EQ presets (Pg Up & Pg Down)
@@ -242,6 +243,7 @@ for_window [class="gnome-calculator"] floating enable
 for_window [class="Gnome-system-monitor"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qalc"] floating enable
+for_window [class="qalc"] resize set 800 400
 #for_window [class="Nemo"] floating enable
 
 # Auto start
