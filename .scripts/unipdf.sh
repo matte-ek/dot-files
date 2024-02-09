@@ -2,4 +2,4 @@ cd /home/matte/uni
 
 pdf="$(find . -name *.pdf | fzf)"
 
-nohup zathura "$pdf" &
+nohup zathura --plugins-dir='/usr/lib/zathura' "$pdf" &

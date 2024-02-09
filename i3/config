@@ -235,6 +235,7 @@ include colors.conf
 
 # "CUSTOM" STUFF BELOW:
 for_window [title="Pine Engine"] floating enable
+for_window [title="Pine Engine"] move position center
 for_window [class="org.gnome.Nautilus"] floating enable
 for_window [class="Eog"] floating enable
 for_window [class="gnome-calculator"] floating enable
@@ -245,9 +246,9 @@ for_window [class="qalc"] resize set 1280 720
 for_window [class="qalc"] move position center
 
 # Auto start
-exec --no-startup-id (sleep 10 && discord --enable-blink-features=MiddleClickAutoscroll)
+exec --no-startup-id (sleep 5 && discord --enable-blink-features=MiddleClickAutoscroll)
+exec --no-startup-id (sleep 5 && spotify-launcher)
 #exec --no-startup-id steam
-exec --no-startup-id (sleep 10 && spotify-launcher)
 
 # Set personal work spaces
 for_window [class="discord"] move to workspace $ws5
