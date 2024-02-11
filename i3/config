@@ -168,7 +168,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+D exec --no-startup-id bash ~/.config/rofi/launchers/type-1/launcher.sh
 bindsym $mod+Shift+X exec --no-startup-id bash ~/.config/rofi/powermenu/type-3/powermenu.sh
 bindsym $mod+W exec --no-startup-id google-chrome-stable
-bindsym $mod+E exec --no-startup-id nemo
+bindsym $mod+E exec --no-startup-id thunar
 bindsym $mod+K exec --no-startup-id (cd ~/.m && ~/.m/m-pv)
 bindsym $mod+L exec --no-startup-id pavucontrol
 bindsym $mod+C exec --no-startup-id /home/matte/src/kitty/kitty/launcher/kitty --class qalc qalc
