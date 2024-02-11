@@ -1,2 +1,3 @@
 set recolor true
 include catppuccin-mocha
+set guioptions none
