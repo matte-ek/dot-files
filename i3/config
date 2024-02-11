@@ -169,7 +169,7 @@ bindsym $mod+D exec --no-startup-id bash ~/.config/rofi/launchers/type-1/launche
 bindsym $mod+Shift+X exec --no-startup-id bash ~/.config/rofi/powermenu/type-3/powermenu.sh
 bindsym $mod+W exec --no-startup-id firefox
 bindsym $mod+E exec --no-startup-id nemo
-bindsym $mod+K exec --no-startup-id (cd ~/.m && ~/.m/m-pv)
+bindsym $mod+K exec --no-startup-id (cd ~/.m && ./runpv.sh)
 bindsym $mod+L exec --no-startup-id pavucontrol
 bindsym $mod+C exec --no-startup-id /home/matte/src/kitty/kitty/launcher/kitty --class qalc qalc
 bindsym $mod+M exec --no-startup-id ~/.m/m-cli --toggle
@@ -246,6 +246,7 @@ for_window [class="qalc"] floating enable
 for_window [class="qalc"] resize set 800 400
 for_window [class="qalc"] move position center
 for_window [class="Pine Engine"] resize set 1664 936
+for_window [class="Pine Engine"] move position center
 
 # Auto start
 #exec --no-startup-id (sleep 10 && discord --enable-blink-features=MiddleClickAutoscroll)
