@@ -28,6 +28,8 @@ else
     STATUS="No player is running"
 fi
 
+sleep 0.25
+
 if [ "$1" == "--status" ]; then
     echo "$STATUS"
 else

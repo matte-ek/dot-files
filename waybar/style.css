@@ -1,0 +1,100 @@
+* {
+    font-family: 'Material-Design-Iconic-Font', 'Inter Medium';
+    font-size: 14px;
+}
+
+window#waybar 
+{
+    background-color: rgba(0, 0, 0, 0.0);
+    color: #ffffff;
+    border-radius: 0em;
+}
+
+#clock
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1em;
+    padding: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#pulseaudio
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1em;
+    padding: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#network
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1em;
+    padding: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#memory
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1em;
+    padding: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#cpu
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1em;
+    padding: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#privacy
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1em;
+    padding: 12px;
+}
+
+#privacy-item.audio-in
+{
+    color: #f38ba8;
+}
+
+#window
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1em;
+    padding: 12px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#custom-music
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1em;
+    padding: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#workspaces
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #f38ba8;
+    border-radius: 1em;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#workspaces button
+{
+    color: #f38ba8;
+}

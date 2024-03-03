@@ -1,0 +1,93 @@
+{
+    "layer": "top",
+    "height": 15,
+    "output": "DP-3",
+    "spacing": 10,
+    "margin-top": 20,
+    "margin-left": 20,
+    "margin-right": 20,
+    "modules-left": ["hyprland/workspaces", "custom/music"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["privacy", "cpu", "memory", "network", "pulseaudio", "clock"],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "enable-bar-scroll": true,
+        "format-icons": {
+            "active": "<span font_size='140%'></span>",
+            "default": "<span font_size='140%'></span>"
+        }
+    },
+    "custom/music": {
+        "exec": "/home/matte/.config/polybar/scripts/get_spotify_status.sh",
+        "format": "<span fgcolor='#f38ba8' font_size='150%'></span>   <span rise='2000'>{}</span>",
+        "interval": 2,
+        "on-click": "playerctl play-pause -p audacious,spotify",
+        "on-scroll-up": "playerctl next -p spotify",
+        "on-scroll-down": "playerctl previous -p spotify"
+    },
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ]
+    },
+    "memory": {
+        "format": "<span fgcolor='#f38ba8' font_size='150%'></span>   <span rise='2000'>{percentage}%</span>",
+        "interval": 1
+    },
+    "cpu": {
+        "format": "<span fgcolor='#f38ba8' font_size='150%'></span>   <span rise='2000'>{usage}%</span>",
+        "interval": 1
+    },
+    "network": {
+        "interface": "wlan0",
+        "interval": 1,
+        "format": "<span fgcolor='#f38ba8' font_size='150%'></span>   <span rise='2000'>{bandwidthDownBytes}</span>     <span fgcolor='#f38ba8' font_size='150%'></span>   <span rise='2000'>{bandwidthUpBytes}</span>",
+        "format-disconnected": "<span fgcolor='#f38ba8' font_size='150%'></span>   <span rise='2000'>No Network</span>"
+    },
+    "pulseaudio": {
+        "format": "<span fgcolor='#f38ba8' font_size='150%'>{icon}</span>   <span rise='2000'>{volume}%</span>",
+        "format-muted": "<span fgcolor='#f38ba8' font_size='150%'></span>   <span rise='2000'>Muted</span>",
+        "format-icons": ["", "", ""],
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "ignored-sinks": ["Easy Effects Sink"],
+        "scroll-step": 5
+    },
+    "clock": {
+        "format": "<span fgcolor='#f38ba8' font_size='150%'></span>   <span rise='2000'>{:%H:%M}</span>",
+        "format-alt": "{:%a, %d. %b  %H:%M}",
+        "tooltip-format": "<tt><span font-size='150%' weight='ultralight'>{calendar}</span></tt>",
+        "locale": "sv_SE.UTF-8",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "on-scroll"     : 1,
+            "on-click-right": "mode",
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions":  {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    }
+}
